@@ -1,2 +1,2 @@
-# Fix-It_Sell-It
-Ecommerce Project
+# COMP229.M2022.Midterm.Template
+ COMP229.M2022 - Midterm Template

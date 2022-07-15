@@ -5,7 +5,7 @@
 
 console.log('app script is working.');
 
-if(getTitle == "Cars List")
+if(getTitle == "Products List")
 {
     let deleteButtons = document.querySelectorAll('.btn-danger');
         

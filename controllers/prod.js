@@ -1,23 +1,23 @@
 // create a reference to the model
-// File Name: car.js
+// File Name: Prod.js
 // Author's Name: Aruna Ravi Kumar
 // Student ID: 301243154
-// Web app name: Car Applcation
-let CarModel = require('../models/car');
+// Web app name: Prod Applcation
+let ProdModel = require('../models/prod');
 
-// Gets all cars from the Database and renders the page to list them all.
-module.exports.carList = function(req, res, next) {  
-    CarModel.find((err, carsList) => {
-        //console.log(carList);
+// Gets all Prods from the Database and renders the page to list them all.
+module.exports.prodList = function(req, res, next) {  
+    ProdModel.find((err, ProdsList) => {
+        //console.log(ProdList);
         if(err)
         {
             return console.error(err);
         }
         else
         {
-            res.render('cars/list', {
-                title: 'Cars List', 
-                CarsList: carsList,
+            res.render('products/list', {
+                title: 'Products List', 
+                ProdList: ProdList,
                 userName: req.user ? req.user.username : ''
             })            
         }
@@ -25,12 +25,12 @@ module.exports.carList = function(req, res, next) {
 }
 
 
-// Gets a car by id and renders the details page.
+// Gets a Prod by id and renders the details page.
 module.exports.details = (req, res, next) => {
     
     let id = req.params.id;
 
-    CarModel.findById(id, (err, carToShow) => {
+    ProdModel.findById(id, (err, ProdToShow) => {
         if(err)
         {
             console.log(err);
@@ -39,9 +39,9 @@ module.exports.details = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('cars/details', {
-                title: 'Car Details', 
-                car: carToShow
+            res.render('products/details', {
+                title: 'Product Details', 
+                Prod: ProdToShow
             })
         }
     });
@@ -51,20 +51,20 @@ module.exports.details = (req, res, next) => {
 module.exports.displayAddPage = (req, res, next) => {
     
     // ADD YOUR CODE HERE    
-    let newCar = CarModel();
+    let newProd = ProdModel();
 
-    res.render('cars/add_edit', {
-        title: 'Add a new Car',
-        car: newCar
+    res.render('products/add_edit', {
+        title: 'Add a new Prod',
+        Prod: newProd
     })        
 
 }
 
-// Processes the data submitted from the Add form to create a new car
+// Processes the data submitted from the Add form to create a new Prod
 module.exports.processAddPage = (req, res, next) => {
 
     // ADD YOUR CODE HERE
-    let newCar = CarModel({
+    let newProd = ProdModel({
         _id: req.body.id,
         make: req.body.make,
         model: req.body.model,
@@ -76,7 +76,7 @@ module.exports.processAddPage = (req, res, next) => {
         price: req.body.price  
     });
 
-    CarModel.create(newCar, (err, car) =>{
+    ProdModel.create(newProd, (err, Prod) =>{
         if(err)
         {
             console.log(err);
@@ -85,21 +85,21 @@ module.exports.processAddPage = (req, res, next) => {
         else
         {
             // refresh the book list
-            console.log(car);
-            res.redirect('/cars/list');
+            console.log(Prod);
+            res.redirect('/products/list');
         }
     });
 
 
 }
 
-// Gets a car by id and renders the Edit form using the add_edit.ejs template
+// Gets a Prod by id and renders the Edit form using the add_edit.ejs template
 module.exports.displayEditPage = (req, res, next) => {
 
     // ADD YOUR CODE HERE
     let id = req.params.id;
 
-    CarModel.findById(id, (err, carToEdit) => {
+    ProdModel.findById(id, (err, ProdToEdit) => {
         if(err)
         {
             console.log(err);
@@ -108,22 +108,22 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('cars/add_edit', {
-                title: 'Edit Car', 
-                car: carToEdit
+            res.render('products/add_edit', {
+                title: 'Edit Prod', 
+                Prod: ProdToEdit
             })
         }
     });
 
 }
 
-// Processes the data submitted from the Edit form to update a car
+// Processes the data submitted from the Edit form to update a Prod
 module.exports.processEditPage = (req, res, next) => {
     
     // ADD YOUR CODE HERE
     let id = req.params.id
 
-    let updatedCar = CarModel({
+    let updatedProd = ProdModel({
         _id: req.body.id,
         make: req.body.make,
         model: req.body.model,
@@ -137,7 +137,7 @@ module.exports.processEditPage = (req, res, next) => {
 
     // console.log(updatedItem);
 
-    CarModel.updateOne({_id: id}, updatedCar, (err) => {
+    ProdModel.updateOne({_id: id}, updatedProd, (err) => {
         if(err)
         {
             console.log(err);
@@ -147,19 +147,19 @@ module.exports.processEditPage = (req, res, next) => {
         {
             // console.log(req.body);
             // refresh the book list
-            res.redirect('/cars/list');
+            res.redirect('/products/list');
         }
     });
     
 }
 
-// Deletes a car based on its id.
+// Deletes a Prod based on its id.
 module.exports.performDelete = (req, res, next) => {
     
     // ADD YOUR CODE HERE
     let id = req.params.id;
 
-    CarModel.remove({_id: id}, (err) => {
+    ProdModel.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
@@ -168,7 +168,7 @@ module.exports.performDelete = (req, res, next) => {
         else
         {
             // refresh the book list
-            res.redirect('/cars/list');
+            res.redirect('/products/list');
         }
     });
 }

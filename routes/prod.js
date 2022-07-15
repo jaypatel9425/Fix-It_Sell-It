@@ -1,12 +1,12 @@
 
-// File Name: car.js
+// File Name: prod.js
 // Author's Name: Aruna Ravi Kumar
 // Student ID: 301243154
-// Web app name: Car Applcation
+// Web app name: prod Applcation
 var express = require('express');
 var router = express.Router();
 
-let carController = require('../controllers/car');
+let prodController = require('../controllers/prod');
 
 // Helper function for guard purposes
 function requireAuth(req, res, next)
@@ -24,22 +24,22 @@ function requireAuth(req, res, next)
 }
 
 /* GET list of items */
-router.get('/list', carController.carList);
+router.get('/list', prodController.prodList);
 
 // Route for Details
-router.get('/details/:id', carController.details);
+router.get('/details/:id', prodController.details);
 
 // Routers for edit
-router.get('/edit/:id', requireAuth, carController.displayEditPage);
-router.post('/edit/:id', requireAuth, carController.processEditPage);
+router.get('/edit/:id', requireAuth, prodController.displayEditPage);
+router.post('/edit/:id', requireAuth, prodController.processEditPage);
 
 // Delete
-router.get('/delete/:id', requireAuth, carController.performDelete);
+router.get('/delete/:id', requireAuth, prodController.performDelete);
 
 /* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', requireAuth, carController.displayAddPage);
+router.get('/add', requireAuth, prodController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', requireAuth, carController.processAddPage);
+router.post('/add', requireAuth, prodController.processAddPage);
 
 module.exports = router;

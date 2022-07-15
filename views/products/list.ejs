@@ -17,13 +17,12 @@
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
-                    <th class="text-center">Make</th>
-                    <th class="text-center">Model</th>
-                    <th class="text-center">Year</th>
-                    <th class="text-center">kilometers</th>
-                    <th class="text-center">Doors</th>
-                    <th class="text-center">Seats</th>
-                    <th class="text-center">Color</th>
+                    <th class="text-center">Product ID</th>
+                    <th class="text-center">Product Name</th>
+                    <th class="text-center">Seller Information</th>
+                    <th class="text-center">Product Information Link</th>
+                    <th class="text-center">Product description</th>
+                  
                     <th class="text-center">Price</th>
                     <th class="text-center" colspan="3">Actions</th>
                 </tr>
@@ -37,8 +36,7 @@
                         <td class="text-center"><%= ProdList[i].year %></td>
                         <td class="text-center"><%= ProdList[i].kilometers %></td>
                         <td class="text-center"><%= ProdList[i].doors %></td>
-                        <td class="text-center"><%= ProdList[i].seats %></td>
-                        <td class="text-center"><%= ProdList[i].color %></td>
+                        
                         <td class="text-center"><%= ProdList[i].price %></td>                        
                         <td class="text-center">
                             <a href="/products/details/<%= ProdList[i]._id %>" class="btn btn-success btn-sm"> 

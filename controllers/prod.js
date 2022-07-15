@@ -17,7 +17,7 @@ module.exports.prodList = function(req, res, next) {
         {
             res.render('products/list', {
                 title: 'Products List', 
-                ProdList: ProdList,
+                ProdList: ProdsList,
                 userName: req.user ? req.user.username : ''
             })            
         }

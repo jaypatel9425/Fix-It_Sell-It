@@ -1,2 +1,2 @@
-# COMP229.M2022.Midterm.Template
- COMP229.M2022 - Midterm Template
+TEAM FIX-IT 
+SELL-IT

@@ -54,7 +54,7 @@ module.exports.displayAddPage = (req, res, next) => {
     let newProd = ProdModel();
 
     res.render('products/add_edit', {
-        title: 'Add a new Prod',
+        title: 'Add a New Product to sell',
         Prod: newProd
     })        
 
@@ -65,13 +65,14 @@ module.exports.processAddPage = (req, res, next) => {
 
     // ADD YOUR CODE HERE
     let newProd = ProdModel({
+
+          
         _id: req.body.id,
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        kilometers: req.body.kilometers,
-        doors: req.body.doors,
-        seats: req.body.seats,
+        productname: req.body.productname,
+        productdescription: req.body.productdescription,
+        condition: req.body.condition,
+        sellername: req.body.sellername,
+        
         color: req.body.color,
         price: req.body.price  
     });
@@ -125,14 +126,13 @@ module.exports.processEditPage = (req, res, next) => {
 
     let updatedProd = ProdModel({
         _id: req.body.id,
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        kilometers: req.body.kilometers,
-        doors: req.body.doors,
-        seats: req.body.seats,
+        productname: req.body.productname,
+        productdescription: req.body.productdescription,
+        condition: req.body.condition,
+        sellername: req.body.sellername,
+        
         color: req.body.color,
-        price: req.body.price  
+        price: req.body.price 
     });
 
     // console.log(updatedItem);

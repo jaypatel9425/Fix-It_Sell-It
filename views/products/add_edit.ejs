@@ -6,59 +6,62 @@
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
 
+        
+
             <form class="form" method="POST">
                 <div class="form-group">
                     <input type="hidden"
                         name="id"
                         value="<%= Prod._id %>"
                     >
-                    <label for="ProdTextField">Product ID</label>
+                    <label for="ProdTextField">Product Condition</label>
                     <input type="text" class="form-control"
                         id="makeTextField"
-                        placeholder="Enter the Prods Make"
-                        name="make" 
-                        value="<%= Prod.make %>"
+                        placeholder="Enter Product Condition"
+                        name="condition" 
+                        value="<%= Prod.condition %>"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="modelTextField">Product Name</label>
                     <input type="text" class="form-control"
                         id="modelTextField"
-                        placeholder="Enter a model"
-                        name="model" 
-                        value="<%= Prod.model %>"
+                        placeholder="Enter Name Of Product"
+                        name="productname" 
+                        value="<%= Prod.productname %>"
                         >
                 </div>
                 <br />
                
                 <div class="form-group">
-                    <label for="YearTextField">Seller Information</label>
-                    <input type="number" class="form-control"
+                    <label for="YearTextField">Enter Your Full Name</label>
+                    <input type="text" class="form-control"
                         id="YearTextField"
-                        placeholder="2022"
-                        name="year" 
-                        value="<%= Prod.year %>"
+                        placeholder="Enter Your Name"
+
+                        name="sellername" 
+                        value="<%= Prod.sellername %>"
                         required>
                 </div>
                 <div class="form-group">
-                    <label for="kilometersTextField">Product Information Link</label>
-                    <input type="number"
+                    <label for="kilometersTextField">Product Color</label>
+                    <input type="text"
                     class="form-control"
                     id="kilometersTextField"
-                    placeholder="20"
-                    name="kilometers" 
-                    value="<%= Prod.kilometers %>"
+                    placeholder="Enter Product Color"
+                    name="color" 
+                    value="<%= Prod.color %>"
                     required>
                 </div>
 
                 <div class="form-group">
                     <label for="doorsTextField">Product Description</label>
-                    <input type="number"
+                    <input type="text"
                     class="form-control"
                     id="doorsTextField"
-                    placeholder="4"
-                    name="doors" 
-                    value="<%= Prod.doors %>"
+                    placeholder="Enter A Short Description Of Product"
+                    name="productdescription" 
+                    value="<%= Prod.productdescription %>"
                     required>
                 </div>
 <!--

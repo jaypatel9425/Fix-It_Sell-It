@@ -9,18 +9,16 @@ let mongoose = require('mongoose');
 // Create a model class
 let prodModel = mongoose.Schema(
     {
-        make: String,
-        model: String,
-        year: Number,
-        kilometers: Number,
-        doors: Number,
-        seats: Number,
+        productname: String,
+        productdescription: String,
+        condition: String,
         color: String,
+        sellername:String,
         price: Number        
     },
     {
-        collection: "car"
+        collection: "Products"
     }
 );
 
-module.exports = mongoose.model('car', prodModel);
+module.exports = mongoose.model('Products', prodModel);

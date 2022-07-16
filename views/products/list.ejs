@@ -9,7 +9,7 @@
             
             <a href="/products/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fas fa-plus-circle"></i> 
-                Add a new Car
+                Add New Product To Sell
             </a>                
         </div>
         <br>
@@ -17,11 +17,11 @@
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
-                    <th class="text-center">Product ID</th>
                     <th class="text-center">Product Name</th>
-                    <th class="text-center">Seller Information</th>
+                    <th class="text-center">Product Condition</th>
+                    <th class="text-center">Color</th>
                     <th class="text-center">Product Information Link</th>
-                    <th class="text-center">Product description</th>
+                    <th class="text-center">Name Of Seller</th>
                   
                     <th class="text-center">Price</th>
                     <th class="text-center" colspan="3">Actions</th>
@@ -31,11 +31,11 @@
 
                 <% for(let i = 0; i < ProdList.length; i++) { %>
                     <tr>
-                        <td class="text-center"><%= ProdList[i].make %></td>
-                        <td class="text-center"><%= ProdList[i].model %></td>
-                        <td class="text-center"><%= ProdList[i].year %></td>
-                        <td class="text-center"><%= ProdList[i].kilometers %></td>
-                        <td class="text-center"><%= ProdList[i].doors %></td>
+                        <td class="text-center"><%= ProdList[i].productname %></td>
+                        <td class="text-center"><%= ProdList[i].productdescription %></td>
+                        <td class="text-center"><%= ProdList[i].color %></td>
+                        <td class="text-center"><%= ProdList[i].condition %></td>
+                        <td class="text-center"><%= ProdList[i].sellername %></td>
                         
                         <td class="text-center"><%= ProdList[i].price %></td>                        
                         <td class="text-center">
